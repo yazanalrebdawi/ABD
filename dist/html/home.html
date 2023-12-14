@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Store</title>
+    <link rel="stylesheet" href="../css/tailwind_frame_work.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body class="bg-[#eee]">
+    <header class="p-4 bg-[#6028c9]">
+      <nav class="container justify-between items-center flex">
+        <a href="#" class="font-[400] sm:text-4xl italic text-white font-serif"
+          >Bookly</a
+        >
+        <div class="flex space-x-4">
+          <form class="hidden sm:inline-block">
+            <input
+              type="text"
+              placeholder="Search..."
+              class="rounded-full p-1 sm:p-2 w-14 sm:w-20 focus:w-32 sm:focus:w-40 transition-all duration-300 ease-out focus:outline-none"
+            />
+          </form>
+          <button>
+            <a href="products.html">
+              <i
+                class="fas fa-shopping-cart text-lg text-[12px] sm:text-lg text-white font-bold w-4 h-4"
+              ></i
+            ></a>
+          </button>
+          <div class="relative inline-block text-left">
+            <div>
+              <button
+                type="button"
+                class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                id="menu-button"
+                aria-expanded="true"
+                aria-haspopup="true"
+              >
+                My account
+                <i
+                  class="fas fa-user-alt text-lg text-[12px] sm:text-lg transition-all ease-in-out duration-150 ml-3 font-bold w-4 h-4"
+                ></i>
+              </button>
+            </div>
+
+            <div
+              class="absolute hidden right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+              role="menu"
+              id="reg_menu"
+              aria-orientation="vertical"
+              aria-labelledby="menu-button"
+              tabindex="-1"
+            >
+              <div class="py-1" role="none">
+                <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                <a
+                  href="login.html"
+                  class="text-gray-700 block px-4 py-2 text-sm hover:bg-[#eee]"
+                  role="menuitem"
+                  tabindex="-1"
+                  id="menu-item-0"
+                  >login</a
+                >
+                <a
+                  href="signin.html"
+                  class="text-gray-700 block px-4 py-2 text-sm hover:bg-[#eee]"
+                  role="menuitem"
+                  tabindex="-1"
+                  id="menu-item-1"
+                  >signin</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <form class="block w-full sm:hidden text-center mt-3">
+        <input
+          type="text"
+          placeholder="Search..."
+          class="rounded-full p-2 w-36 focus:w-44 transition-all duration-300 ease-out focus:outline-none"
+        />
+      </form>
+    </header>
+    <main id="main" class="overflow-hidden">
+      <div
+        class="slider-container relative overflow-hidden w-screen h-screen hidden md:block"
+      >
+        <div
+          class="left-slide absolute left-0 top-0 w-1/4 h-full transition-all ease-in-out duration-500"
+        >
+          <div class="bg-gradient-to-b from-[#bdc3c7] to-[ #2c3e50]">
+            <h1 class="font-bold italic">Joyful</h1>
+            <p>Catchy topics</p>
+          </div>
+          <div class="bg-gradient-to-b from-[#F2994A] to-[#F2C94C]">
+            <h1 class="font-bold italic">Thriving</h1>
+            <p>Full of knowledge</p>
+          </div>
+          <div class="bg-gradient-to-b from-[#3E5151] to-[#DECBA4]">
+            <h1 class="font-bold italic">Various</h1>
+            <p>hundred of types</p>
+          </div>
+          <div class="bg-gradient-to-b from-[#d9a7c7] to-[#fffcdc]">
+            <h1 class="font-bold italic">Creativity</h1>
+            <p>Discover the unknown</p>
+          </div>
+        </div>
+        <div
+          class="right-slide absolute left-1/4 top-0 w-3/4 h-full transition-all ease-in-out duration-500"
+        >
+          <div
+            style="
+              background-image: url(../../src/images/pexels-dina-nasyrova-3808243.jpg);
+            "
+          ></div>
+          <div
+            style="
+              background-image: url(../../src/images/pexels-pixabay-159711.jpg);
+            "
+          ></div>
+          <div
+            style="
+              background-image: url(../../src/images/pexels-rafael-cosquiere-2041540.jpg);
+            "
+          ></div>
+          <div
+            style="
+              background-image: url(../../src/images/pexels-thought-catalog-904616.jpg);
+            "
+          ></div>
+        </div>
+        <div class="actions-buttons">
+          <button id="move_btn" class="down-button">
+            <i class="fas fa-arrow-down"></i>
+          </button>
+          <button id="move_btn" class="up-button">
+            <i class="fas fa-arrow-up"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- main section -->
+      <section class="p-10 mx-auto">
+        <h1 class="block text-4xl text-center font-bold italic">Our Books</h1>
+        <div class="flex flex-wrap sm:gap-6 justify-between md:gap-8 lg:gap-10">
+          <!-- template one  -->
+          <div
+            class="movie relative m-4 w-40 sm:w-1/5 overflow-hidden rounded-sm shadow-md bg-[#373b69] group"
+          >
+            <img
+              src="../../src/images/team-02.jpg"
+              class="w-full group-hover:grayscale"
+              alt="Leo"
+            />
+            <div class="movie-info">
+              <h3
+                class="text-white tracking-wider text-sm sm:text-xl font-mono font-normal m-4 italic"
+              >
+                Strikers
+              </h3>
+              <div
+                class="w-full flex justify-end items-center text-white text-base font-medium"
+              >
+                Buy
+                <i class="fas fa-cart-plus text-right text-white m-4 block"></i>
+              </div>
+            </div>
+            <div
+              class="overview text-sm sm:text-lg absolute left-0 right-0 bottom-0 bg-white max-h-full z-10 translate-y-full group-hover:translate-y-0 overflow-hidden transition-transform ease-in-out duration-200 p-4"
+            >
+              <h3 class="block text-lg font-bold">Overview</h3>
+              Jaded 74-year-old lizard Leo has been stuck in the same Florida
+              classroom for decades with his terrarium-mate turtle. When he
+              learns teacher.
+            </div>
+          </div>
+          <!-- template one  -->
+          <div
+            class="movie relative m-4 w-40 sm:w-1/5 overflow-hidden rounded-sm shadow-md bg-[#373b69] group"
+          >
+            <img
+              src="../../src/images/team-02.jpg"
+              class="w-full group-hover:grayscale"
+              alt="Leo"
+            />
+            <div class="movie-info">
+              <h3
+                class="text-white tracking-wider text-sm sm:text-xl font-mono font-normal m-4 italic"
+              >
+                Strikers
+              </h3>
+              <div
+                class="w-full flex justify-end items-center text-white text-base font-medium"
+              >
+                Buy
+                <i class="fas fa-cart-plus text-right text-white m-4 block"></i>
+              </div>
+            </div>
+            <div
+              class="overview text-sm sm:text-lg absolute left-0 right-0 bottom-0 bg-white max-h-full z-10 translate-y-full group-hover:translate-y-0 overflow-hidden transition-transform ease-in-out duration-200 p-4"
+            >
+              <h3 class="block text-lg font-bold">Overview</h3>
+              Jaded 74-year-old lizard Leo has been stuck in the same Florida
+              classroom for decades with his terrarium-mate turtle. When he
+              learns teacher.
+            </div>
+          </div>
+          <!-- template one  -->
+          <div
+            class="movie relative m-4 w-40 sm:w-1/5 overflow-hidden rounded-sm shadow-md bg-[#373b69] group"
+          >
+            <img
+              src="../../src/images/team-02.jpg"
+              class="w-full group-hover:grayscale"
+              alt="Leo"
+            />
+            <div class="movie-info">
+              <h3
+                class="text-white tracking-wider text-sm sm:text-xl font-mono font-normal m-4 italic"
+              >
+                Strikers
+              </h3>
+              <div
+                class="w-full flex justify-end items-center text-white text-base font-medium"
+              >
+                Buy
+                <i class="fas fa-cart-plus text-right text-white m-4 block"></i>
+              </div>
+            </div>
+            <div
+              class="overview text-sm sm:text-lg absolute left-0 right-0 bottom-0 bg-white max-h-full z-10 translate-y-full group-hover:translate-y-0 overflow-hidden transition-transform ease-in-out duration-200 p-4"
+            >
+              <h3 class="block text-lg font-bold">Overview</h3>
+              Jaded 74-year-old lizard Leo has been stuck in the same Florida
+              classroom for decades with his terrarium-mate turtle. When he
+              learns teacher.
+            </div>
+          </div>
+          <!-- template one  -->
+          <div
+            class="movie relative m-4 w-40 sm:w-1/5 overflow-hidden rounded-sm shadow-md bg-[#373b69] group"
+          >
+            <img
+              src="../../src/images/team-02.jpg"
+              class="w-full group-hover:grayscale"
+              alt="Leo"
+            />
+            <div class="movie-info">
+              <h3
+                class="text-white tracking-wider text-sm sm:text-xl font-mono font-normal m-4 italic"
+              >
+                Strikers
+              </h3>
+              <div
+                class="w-full flex justify-end items-center text-white text-base font-medium"
+              >
+                Buy
+                <i class="fas fa-cart-plus text-right text-white m-4 block"></i>
+              </div>
+            </div>
+            <div
+              class="overview text-sm sm:text-lg absolute left-0 right-0 bottom-0 bg-white max-h-full z-10 translate-y-full group-hover:translate-y-0 overflow-hidden transition-transform ease-in-out duration-200 p-4"
+            >
+              <h3 class="block text-lg font-bold">Overview</h3>
+              Jaded 74-year-old lizard Leo has been stuck in the same Florida
+              classroom for decades with his terrarium-mate turtle. When he
+              learns teacher.
+            </div>
+          </div>
+          <!-- template one  -->
+          <div
+            class="movie relative m-4 w-40 sm:w-1/5 overflow-hidden rounded-sm shadow-md bg-[#373b69] group"
+          >
+            <img
+              src="../../src/images/team-02.jpg"
+              class="w-full group-hover:grayscale"
+              alt="Leo"
+            />
+            <div class="movie-info">
+              <h3
+                class="text-white tracking-wider text-sm sm:text-xl font-mono font-normal m-4 italic"
+              >
+                Strikers
+              </h3>
+              <div
+                class="w-full flex justify-end items-center text-white text-base font-medium"
+              >
+                Buy
+                <i class="fas fa-cart-plus text-right text-white m-4 block"></i>
+              </div>
+            </div>
+            <div
+              class="overview text-sm sm:text-lg absolute left-0 right-0 bottom-0 bg-white max-h-full z-10 translate-y-full group-hover:translate-y-0 overflow-hidden transition-transform ease-in-out duration-200 p-4"
+            >
+              <h3 class="block text-lg font-bold">Overview</h3>
+              Jaded 74-year-old lizard Leo has been stuck in the same Florida
+              classroom for decades with his terrarium-mate turtle. When he
+              learns teacher.
+            </div>
+          </div>
+          <!-- template one  -->
+          <div
+            class="movie relative m-4 w-40 sm:w-1/5 overflow-hidden rounded-sm shadow-md bg-[#373b69] group"
+          >
+            <img
+              src="../../src/images/team-02.jpg"
+              class="w-full group-hover:grayscale"
+              alt="Leo"
+            />
+            <div class="movie-info">
+              <h3
+                class="text-white tracking-wider text-sm sm:text-xl font-mono font-normal m-4 italic"
+              >
+                Strikers
+              </h3>
+              <div
+                class="w-full flex justify-end items-center text-white text-base font-medium"
+              >
+                Buy
+                <i class="fas fa-cart-plus text-right text-white m-4 block"></i>
+              </div>
+            </div>
+            <div
+              class="overview text-sm sm:text-lg absolute left-0 right-0 bottom-0 bg-white max-h-full z-10 translate-y-full group-hover:translate-y-0 overflow-hidden transition-transform ease-in-out duration-200 p-4"
+            >
+              <h3 class="block text-lg font-bold">Overview</h3>
+              Jaded 74-year-old lizard Leo has been stuck in the same Florida
+              classroom for decades with his terrarium-mate turtle. When he
+              learns teacher.
+            </div>
+          </div>
+          <!-- template one  -->
+          <div
+            class="movie relative m-4 w-40 sm:w-1/5 overflow-hidden rounded-sm shadow-md bg-[#373b69] group"
+          >
+            <img
+              src="../../src/images/team-02.jpg"
+              class="w-full group-hover:grayscale"
+              alt="Leo"
+            />
+            <div class="movie-info">
+              <h3
+                class="text-white tracking-wider text-sm sm:text-xl font-mono font-normal m-4 italic"
+              >
+                Strikers
+              </h3>
+              <div
+                class="w-full flex justify-end items-center text-white text-base font-medium"
+              >
+                Buy
+                <i class="fas fa-cart-plus text-right text-white m-4 block"></i>
+              </div>
+            </div>
+            <div
+              class="overview text-sm sm:text-lg absolute left-0 right-0 bottom-0 bg-white max-h-full z-10 translate-y-full group-hover:translate-y-0 overflow-hidden transition-transform ease-in-out duration-200 p-4"
+            >
+              <h3 class="block text-lg font-bold">Overview</h3>
+              Jaded 74-year-old lizard Leo has been stuck in the same Florida
+              classroom for decades with his terrarium-mate turtle. When he
+              learns teacher.
+            </div>
+          </div>
+          <!-- template one  -->
+          <div
+            class="movie relative m-4 w-40 sm:w-1/5 overflow-hidden rounded-sm shadow-md bg-[#373b69] group"
+          >
+            <img
+              src="../../src/images/team-02.jpg"
+              class="w-full group-hover:grayscale"
+              alt="Leo"
+            />
+            <div class="movie-info">
+              <h3
+                class="text-white tracking-wider text-sm sm:text-xl font-mono font-normal m-4 italic"
+              >
+                Strikers
+              </h3>
+              <div
+                class="w-full flex justify-end items-center text-white text-base font-medium"
+              >
+                Buy
+                <i class="fas fa-cart-plus text-right text-white m-4 block"></i>
+              </div>
+            </div>
+            <div
+              class="overview text-sm sm:text-lg absolute left-0 right-0 bottom-0 bg-white max-h-full z-10 translate-y-full group-hover:translate-y-0 overflow-hidden transition-transform ease-in-out duration-200 p-4"
+            >
+              <h3 class="block text-lg font-bold">Overview</h3>
+              Jaded 74-year-old lizard Leo has been stuck in the same Florida
+              classroom for decades with his terrarium-mate turtle. When he
+              learns teacher.
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--  -->
+
+      <!-- increament section  -->
+      <div
+        class="hidden md:flex justify-between px-16 text-center mt-16 bg-[#333] py-5 text-white"
+      >
+        <div class="Counter_container">
+          <i class="fab fa-twitter fa-3x"></i>
+          <div class="counter" data-target="1200"></div>
+          <span>Twitter Followers</span>
+        </div>
+
+        <div class="Counter_container">
+          <i class="fab fa-youtube fa-3x"></i>
+          <div class="counter" data-target="5000"></div>
+          <span>Youtube Subscribers</span>
+        </div>
+
+        <div class="Counter_container">
+          <i class="fab fa-facebook fa-3x"></i>
+          <div class="counter" data-target="7500"></div>
+          <span>Facebook Fans</span>
+        </div>
+      </div>
+    </main>
+    <script src="../js/home.js"></script>
+  </body>
+</html>

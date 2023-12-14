@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Store</title>
+
+    <!-- tailwind frame work  -->
+    <link rel="stylesheet" href="../css/tailwind_frame_work.css" />
+    <!-- font awesome icons  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- main style sheet  -->
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body
+    class="bg-gradient-to-t from-[#91EAE4] via-[#86A8E7] to-[#7F7FD5] flex justify-center items-center font-serif flex-col text-white m-0"
+  >
+    <header
+      class="p-8 sm:p-4 my-auto bg-[#6028c9] w-full top-0 left-0 mt-16 sm:-mt-24 mb-16 block"
+    >
+      <nav class="container justify-between items-center flex">
+        <a href="#" class="font-[400] sm:text-4xl italic text-white font-serif"
+          >Bookly</a
+        >
+      </nav>
+    </header>
+    <div
+      class="mb-56 md:mb-0 py-3 px-5 sm:py-6 sm:px-10 bg-container-bg rounded-md m-auto sm:m-0"
+      id="main-container"
+    >
+      <h1 class="text-2xl sm:text-4xl text-center italic" id="title">
+        Please Sign in
+      </h1>
+      <form id="form">
+        <!-- input one  -->
+        <div class="relative w-52 sm:w-72 mt-5 mb-10 mx-0 text-base sm:text-lg">
+          <input
+            required
+            type="email"
+            id="email"
+            class="input_shape peer focus:border-b-btn-color valid:border-b-btn-color"
+          />
+          <label id="wave" for="email" class="absolute top-4 email"
+            >Email</label
+          >
+        </div>
+        <!-- input two  -->
+        <div class="relative w-52 sm:w-72 mt-5 mb-10 mx-0 text-base sm:text-lg">
+          <input
+            required
+            type="password"
+            id="password"
+            class="input_shape peer focus:border-b-btn-color valid:border-b-btn-color"
+          />
+          <label id="wave" for="password" class="absolute top-4 password"
+            >Password </label
+          ><i
+            id="icon"
+            class="fa fa-eye h-8 w-8 text-white absolute bottom-0.5 right-0"
+          ></i>
+        </div>
+        <button
+          type="submit"
+          id="btn_register"
+          class="btn w-full font-bold italic text-black bg-btn-color rounded-md p-2 sm:p-3.5 text-sm sm:text-base cursor-pointer focus:scale-[0.98] focus:outline-none"
+        >
+          Sign in
+        </button>
+        <p class="mt-7 text-sm sm:text-base">
+          have an account?
+          <a href="signin.html" class="text-btn-color">Log in</a>
+        </p>
+      </form>
+    </div>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="../js/register.js"></script>
+  </body>
+</html>
+<!--! just put this in terminal .............. ( npm run build-css ) -->

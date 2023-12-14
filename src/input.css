@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.input_shape {
+  @apply bg-transparent w-full py-3.5 block border-solid border-b-2 border-b-white focus:outline-none;
+}
+
+.left-slide > div {
+  @apply h-full flex justify-center items-center flex-col w-full text-white;
+}
+.left-slide h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+  margin-top: -30px;
+}
+
+.right-slide > div {
+  background-position: center left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+.slider-container .actions-buttons button {
+  position: absolute;
+  left: 25%;
+  top: 50%;
+  z-index: 10;
+}
+.slider-container .actions-buttons .down-button {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  transform: translateX(-100%);
+}
+.slider-container .actions-buttons .up-button {
+  transform: translateY(-100%);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+#move_btn {
+  @apply bg-white border-0 text-[#aaa] cursor-pointer p-4;
+}
+#move_btn:hover {
+  color: #222;
+}
+#move_btn:focus {
+  outline: none;
+}
